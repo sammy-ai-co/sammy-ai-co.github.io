@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Soonhyun Kwon - Portfolio</title>
+  <!-- Tailwind CSS (디자인 자동 적용) -->
+  <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="bg-gray-50 text-gray-800 font-sans">
+
+  <!-- 1. Header & Bio (상단 프로필) -->
+  <header class="max-w-4xl mx-auto px-4 py-12 text-center">
+    <!-- STEP 2에서 올린 내 프로필 사진 파일명으로 수정 (예: profile.jpg) -->
+    <img src="profile.jpg" class="w-32 h-32 rounded-full mx-auto mb-4 object-cover shadow-lg" alt="Profile">
+    <h1 class="text-3xl font-bold">Soonhyun Kwon</h1>
+    <p class="text-gray-600 mt-2">Robotics Software & HIL Test Engineer | Prospective PhD Applicant</p>
+    
+    <!-- 버튼 링크들 -->
+    <div class="mt-6 flex justify-center gap-4">
+      <!-- STEP 2에서 올린 내 CV PDF 파일명으로 수정 -->
+      <a href="CV_Soonhyun_Kwon.pdf" target="_blank" class="bg-blue-600 text-white px-4 py-2 rounded-lg font-medium hover:bg-blue-700">📄 Download CV</a>
+      <a href="mailto:내이메일주소@gmail.com" class="bg-gray-200 text-gray-700 px-4 py-2 rounded-lg font-medium hover:bg-gray-300">✉️ Email</a>
+      <a href="https://github.com/sammy-ai-co" target="_blank" class="bg-gray-200 text-gray-700 px-4 py-2 rounded-lg font-medium hover:bg-gray-300">GitHub</a>
+    </div>
+  </header>
+
+  <!-- 2. Projects Section (프로젝트 카드 배치) -->
+  <main class="max-w-4xl mx-auto px-4 py-8">
+    <h2 class="text-2xl font-bold mb-6 border-b pb-2">Featured Projects & Demos</h2>
+
+    <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+
+      <!-- 프로젝트 카드 1 -->
+      <div class="bg-white rounded-xl shadow-md overflow-hidden hover:shadow-lg transition">
+        <!-- STEP 2에서 올린 프로젝트 GIF 또는 이미지 파일명 -->
+        <img src="demo_robot.gif" alt="Robot Demo" class="w-full h-48 object-cover">
+        <div class="p-5">
+          <h3 class="text-xl font-bold">Agriculture Robot Vision AI</h3>
+          <p class="text-gray-600 text-sm mt-2">ROS 2 and Jetson Orin Nano based real-time perception and autonomous navigation pipeline.</p>
+          <!-- 기술 스택 태그 -->
+          <div class="mt-4 flex flex-wrap gap-2">
+            <span class="bg-blue-100 text-blue-800 text-xs px-2 py-1 rounded">ROS 2</span>
+            <span class="bg-green-100 text-green-800 text-xs px-2 py-1 rounded">PyTorch</span>
+            <span class="bg-purple-100 text-purple-800 text-xs px-2 py-1 rounded">C++</span>
+            <span class="bg-gray-100 text-gray-800 text-xs px-2 py-1 rounded">CAN-FD</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- 프로젝트 카드 2 -->
+      <div class="bg-white rounded-xl shadow-md overflow-hidden hover:shadow-lg transition">
+        <!-- STEP 2에서 올린 프로젝트 이미지 파일명 -->
+        <img src="hil_bench.jpg" alt="HIL Testbench" class="w-full h-48 object-cover">
+        <div class="p-5">
+          <h3 class="text-xl font-bold">HIL Test Bench Automation</h3>
+          <p class="text-gray-600 text-sm mt-2">Automated hardware-in-the-loop validation using MATLAB/Simulink and Vector network tools.</p>
+          <div class="mt-4 flex flex-wrap gap-2">
+            <span class="bg-yellow-100 text-yellow-800 text-xs px-2 py-1 rounded">MATLAB</span>
+            <span class="bg-red-100 text-red-800 text-xs px-2 py-1 rounded">Vector CANoe</span>
+            <span class="bg-gray-100 text-gray-800 text-xs px-2 py-1 rounded">Python</span>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </main>
+
+</body>
+</html>
