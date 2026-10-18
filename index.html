@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Soonhyun Kwon - Portfolio</title>
+  <!-- Tailwind CSS (styling) -->
+  <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="bg-gray-50 text-gray-800 font-sans">
+
+  <!-- 1. Header & Bio -->
+  <header class="max-w-4xl mx-auto px-4 py-12 text-center">
+    <img src="profile.jpg" class="w-32 h-32 rounded-full mx-auto mb-4 object-cover shadow-lg" alt="Profile" onerror="this.style.display='none'">
+    <h1 class="text-3xl font-bold">Soonhyun Kwon</h1>
+    <p class="text-gray-600 mt-2">Robotics Software Engineer at Beyond Robotics | Prospective PhD Applicant in Robotics</p>
+
+    <!-- Link buttons -->
+    <div class="mt-6 flex flex-wrap justify-center gap-4">
+      <!-- Public CV PDF (without phone number or home address) -->
+      <a href="CV_Soonhyun_Kwon.pdf" target="_blank" class="bg-blue-600 text-white px-4 py-2 rounded-lg font-medium hover:bg-blue-700">📄 Download CV</a>
+      <a href="#" id="email-link" class="bg-gray-200 text-gray-700 px-4 py-2 rounded-lg font-medium hover:bg-gray-300">✉️ Email</a>
+      <a href="https://github.com/sammy-ai-co" target="_blank" class="bg-gray-200 text-gray-700 px-4 py-2 rounded-lg font-medium hover:bg-gray-300">GitHub</a>
+    </div>
+  </header>
+
+  <main class="max-w-4xl mx-auto px-4 pb-16 space-y-12">
+
+    <!-- 2. Research Interests -->
+    <section>
+      <h2 class="text-2xl font-bold mb-4 border-b pb-2">Research Interests</h2>
+      <div class="space-y-3 text-gray-700 leading-relaxed">
+        <p>
+          I am interested in <strong>robot manipulation and autonomy</strong>, especially <strong>Vision-Language-Action (VLA) models</strong>
+          that let robot arms and humanoid robots perform real-world tasks from camera input and language instructions.
+        </p>
+        <p>
+          At Beyond Robotics, I already work hands-on with this stack: I integrate vision models (RF-DETR) into ROS 2 pipelines
+          and work on Behavior Tree control for robot arms: I set up the camera and built the Behavior Tree for a pick-and-place cell on my own, and modified the control of a dual-arm strawberry harvesting robot.
+          The next step I want to study is replacing these hand-designed behaviors with learned VLA policies.
+        </p>
+        <p>
+          Before robotics, I spent four years in validation at John Deere (HIL circuit-fault regression testing) and Hyundai (CAN-log and signal analysis).
+          I bring that discipline to research: testing systematically before running on real hardware, and debugging robot systems end to end.
+        </p>
+      </div>
+    </section>
+
+    <!-- 3. Projects (Problem → Approach → Result) -->
+    <section>
+      <h2 class="text-2xl font-bold mb-6 border-b pb-2">Featured Projects & Demos</h2>
+
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+
+        <!-- Project card 1 -->
+        <div class="bg-white rounded-xl shadow-md overflow-hidden hover:shadow-lg transition">
+          <video src="demo_robot.mp4" class="w-full h-48 object-cover" autoplay muted loop playsinline aria-label="Strawberry harvesting robot demo"></video>
+          <div class="p-5">
+            <h3 class="text-xl font-bold">Strawberry Harvesting Demo</h3>
+            <p class="text-gray-600 text-sm mt-2">The harvesting robot's arm reaching for and picking a strawberry, controlled by Behavior Trees in ROS 2.</p>
+            <div class="mt-4 flex flex-wrap gap-2">
+              <span class="bg-blue-100 text-blue-800 text-xs px-2 py-1 rounded">ROS 2</span>
+              <span class="bg-green-100 text-green-800 text-xs px-2 py-1 rounded">Behavior Trees</span>
+              <span class="bg-purple-100 text-purple-800 text-xs px-2 py-1 rounded">UFactory</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Project card 2 -->
+        <div class="bg-white rounded-xl shadow-md overflow-hidden hover:shadow-lg transition">
+          <img src="strawberry_robot.jpg" alt="Dual-arm strawberry harvesting robot at 2026 FFK" class="w-full h-48 object-cover object-[center_55%]">
+          <div class="p-5">
+            <h3 class="text-xl font-bold">Dual-Arm Strawberry Harvesting Robot</h3>
+            <p class="text-gray-600 text-sm mt-2"><strong>Problem:</strong> Coordinating two robot arms on one mobile platform to pick strawberries selectively.</p>
+            <p class="text-gray-600 text-sm mt-1"><strong>Approach:</strong> Modified the Behavior Trees over UFactory arm nodes, and built a ROS 2/CAN control GUI via rosbridge.</p>
+            <p class="text-gray-600 text-sm mt-1"><strong>Result:</strong> Demonstrated live at the 2026 FFK exhibition (Beyond Robotics).</p>
+            <div class="mt-4 flex flex-wrap gap-2">
+              <span class="bg-blue-100 text-blue-800 text-xs px-2 py-1 rounded">ROS 2</span>
+              <span class="bg-green-100 text-green-800 text-xs px-2 py-1 rounded">Behavior Trees</span>
+              <span class="bg-purple-100 text-purple-800 text-xs px-2 py-1 rounded">Manipulation</span>
+              <span class="bg-gray-100 text-gray-800 text-xs px-2 py-1 rounded">rosbridge</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Project card 3 -->
+        <div class="bg-white rounded-xl shadow-md overflow-hidden hover:shadow-lg transition">
+          <div class="p-5">
+            <h3 class="text-xl font-bold">Robot Arm Pick-and-Place Cell</h3>
+            <p class="text-gray-600 text-sm mt-2"><strong>Problem:</strong> Picking objects from a crate reliably with a robot arm and custom end-of-arm tooling.</p>
+            <p class="text-gray-600 text-sm mt-1"><strong>Approach:</strong> Set up the camera and independently built the Behavior Tree for pick-and-place with a UFactory arm, controlled through ROS 2.</p>
+            <div class="mt-4 flex flex-wrap gap-2">
+              <span class="bg-blue-100 text-blue-800 text-xs px-2 py-1 rounded">ROS 2</span>
+              <span class="bg-green-100 text-green-800 text-xs px-2 py-1 rounded">Behavior Trees</span>
+              <span class="bg-purple-100 text-purple-800 text-xs px-2 py-1 rounded">Pick-and-Place</span>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- 4. Experience -->
+    <section>
+      <h2 class="text-2xl font-bold mb-6 border-b pb-2">Experience</h2>
+      <div class="space-y-5">
+        <div>
+          <div class="flex flex-wrap justify-between gap-x-4">
+            <h3 class="font-bold">Software Engineer · Beyond Robotics</h3>
+            <span class="text-sm text-gray-500">Jul 2026 – Present</span>
+          </div>
+          <p class="text-gray-600 text-sm mt-1">Built a camera-based pick-and-place Behavior Tree on my own and modified dual-arm strawberry harvesting control; RF-DETR vision integration and a ROS 2/CAN control GUI.</p>
+        </div>
+        <div>
+          <div class="flex flex-wrap justify-between gap-x-4">
+            <h3 class="font-bold">Software Test Engineer · John Deere</h3>
+            <span class="text-sm text-gray-500">May 2023 – Oct 2025</span>
+          </div>
+          <p class="text-gray-600 text-sm mt-1">Regression testing of embedded machine software on hardware-in-the-loop benches (ETAS LABCAR, MATLAB), including circuit-fault testing; closed-loop feature validation with Vector CANalyzer/CANape.</p>
+        </div>
+        <div>
+          <div class="flex flex-wrap justify-between gap-x-4">
+            <h3 class="font-bold">Telematics Product Validation Engineer · Hyundai America Technical Center</h3>
+            <span class="text-sm text-gray-500">Oct 2022 – Apr 2023</span>
+          </div>
+          <p class="text-gray-600 text-sm mt-1">Collected and analyzed CAN logs and app signal data to validate the Bluelink connected-car app across Hyundai, Kia and Genesis vehicles.</p>
+        </div>
+        <div>
+          <div class="flex flex-wrap justify-between gap-x-4">
+            <h3 class="font-bold">Electronics Technician Intern · Continental</h3>
+            <span class="text-sm text-gray-500">Apr 2022 – Jul 2022</span>
+          </div>
+          <p class="text-gray-600 text-sm mt-1">Built a custom load-box test apparatus and worst-case stress tests for Body Control Module validation.</p>
+        </div>
+        <div>
+          <div class="flex flex-wrap justify-between gap-x-4">
+            <h3 class="font-bold">Software Test Engineer Co-op · Gentherm</h3>
+            <span class="text-sm text-gray-500">Oct 2017 – Jul 2019</span>
+          </div>
+          <p class="text-gray-600 text-sm mt-1">Validated closed-loop motor feedback (power seat) and thermal control systems; wrote requirements in IBM DOORS.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- 5. Education -->
+    <section>
+      <h2 class="text-2xl font-bold mb-6 border-b pb-2">Education</h2>
+      <div class="flex flex-wrap justify-between gap-x-4">
+        <h3 class="font-bold">B.S. in Electrical Engineering · Kettering University</h3>
+        <span class="text-sm text-gray-500">2017 – 2022</span>
+      </div>
+      <p class="text-gray-600 text-sm mt-1">Provost Scholarship · Dean's List</p>
+    </section>
+
+  </main>
+
+  <!-- Build the email address only on click so scrapers cannot read it from the HTML -->
+  <script>
+    document.getElementById("email-link").addEventListener("click", function (e) {
+      e.preventDefault();
+      window.location.href = "mailto:" + ["whitedoor1200", "gmail.com"].join("@");
+    });
+  </script>
+
+</body>
+</html>
